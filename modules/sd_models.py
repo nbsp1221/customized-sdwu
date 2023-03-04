@@ -17,7 +17,7 @@ from modules.paths import models_path
 from modules.sd_hijack_inpainting import do_inpainting_hijack
 from modules.timer import Timer
 
-model_dir = "Stable-diffusion"
+model_dir = "Stable-Diffusion"
 model_path = os.path.abspath(os.path.join(paths.models_path, model_dir))
 
 checkpoints_list = {}
