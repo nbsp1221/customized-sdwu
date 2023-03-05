@@ -1,2 +1,2 @@
 ﻿name,prompt,negative_prompt
-Basic,,"(low quality:1.5), (worst quality:1.5), blurry, text, cropped, out of frame, extra arms, extra legs, extra fingers"
+Basic,(best quality),"(low quality:1.5), (worst quality:1.5), blurry, text, cropped, out of frame, extra arms, extra legs, extra fingers"
