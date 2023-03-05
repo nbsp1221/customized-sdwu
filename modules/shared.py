@@ -13,7 +13,7 @@ import modules.interrogate
 import modules.memmon
 import modules.styles
 import modules.devices as devices
-from modules import localization, extensions, script_loading, errors, ui_components, shared_items
+from modules import defaults, localization, extensions, script_loading, errors, ui_components, shared_items
 from modules.paths import models_path, script_path, data_path
 
 
@@ -75,10 +75,10 @@ parser.add_argument("--use-cpu", nargs='+', help="use CPU as torch device for sp
 parser.add_argument("--listen", action='store_true', help="launch gradio with 0.0.0.0 as server name, allowing to respond to network requests")
 parser.add_argument("--port", type=int, help="launch gradio with given server port, you need root/admin rights for ports < 1024, defaults to 7860 if available", default=None)
 parser.add_argument("--show-negative-prompt", action='store_true', help="does not do anything", default=False)
-parser.add_argument("--ui-config-file", type=str, help="filename to use for ui configuration", default=os.path.join(data_path, 'ui-config.json'))
+parser.add_argument("--ui-config-file", type=str, help="filename to use for ui configuration", default=defaults.ui_config_file)
 parser.add_argument("--hide-ui-dir-config", action='store_true', help="hide directory configuration from webui", default=False)
 parser.add_argument("--freeze-settings", action='store_true', help="disable editing settings", default=False)
-parser.add_argument("--ui-settings-file", type=str, help="filename to use for ui settings", default=os.path.join(data_path, 'config.json'))
+parser.add_argument("--ui-settings-file", type=str, help="filename to use for ui settings", default=defaults.ui_settings_file)
 parser.add_argument("--gradio-debug",  action='store_true', help="launch gradio with --debug option")
 parser.add_argument("--gradio-auth", type=str, help='set gradio authentication like "username:password"; or comma-delimit multiple like "u1:p1,u2:p2,u3:p3"', default=None)
 parser.add_argument("--gradio-auth-path", type=str, help='set gradio authentication file path ex. "/path/to/auth/file" same auth format as --gradio-auth', default=None)
@@ -563,7 +563,8 @@ class Options:
         assert not cmd_opts.freeze_settings, "saving settings is disabled"
 
         with open(filename, "w", encoding="utf8") as file:
-            json.dump(self.data, file, indent=4)
+            json.dump(self.data, file, indent=2)
+            file.write('\n')
 
     def same_type(self, x, y):
         if x is None or y is None:
