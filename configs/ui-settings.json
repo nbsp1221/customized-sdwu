@@ -114,7 +114,7 @@
   "dimensions_and_batch_together": true,
   "keyedit_precision_attention": 0.1,
   "keyedit_precision_extra": 0.05,
-  "quicksettings": "sd_model_checkpoint",
+  "quicksettings": "sd_model_checkpoint, sd_vae",
   "ui_reorder": "inpaint, sampler, checkboxes, hires_fix, dimensions, cfg, seed, batch, override_settings, scripts",
   "ui_extra_networks_tab_reorder": "",
   "localization": "None",

@@ -6,7 +6,7 @@
   "txt2img/Styles/visible": true,
   "txt2img/Styles/value": [],
   "txt2img/Sampling method/visible": true,
-  "txt2img/Sampling method/value": "Euler a",
+  "txt2img/Sampling method/value": "DPM++ 2M Karras",
   "txt2img/Sampling steps/visible": true,
   "txt2img/Sampling steps/value": 20,
   "txt2img/Sampling steps/minimum": 1,
